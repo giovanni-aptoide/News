@@ -13,7 +13,8 @@ class RetrofitNewsNetwork @Inject constructor() : NewsNetworkDataSource {
         Retrofit.Builder().baseUrl(BASE_URL).addConverterFactory(GsonConverterFactory.create())
             .build().create(NewsApi::class.java)
 
-    override fun getRemoteArticles(): NewsPagingSource = NewsPagingSource(backend = networkApi)
+    override fun getRemoteArticles(sourceId: String): NewsPagingSource =
+        NewsPagingSource(backend = networkApi, sourceId = sourceId)
 
     companion object {
         const val BASE_URL = "https://newsapi.org/v2/"

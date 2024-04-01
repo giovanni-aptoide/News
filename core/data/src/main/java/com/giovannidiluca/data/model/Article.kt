@@ -10,5 +10,4 @@ data class Article(
     val publishedAt: String,
     val author: String,
     val active: Boolean,
-    val sourceName: String
 )

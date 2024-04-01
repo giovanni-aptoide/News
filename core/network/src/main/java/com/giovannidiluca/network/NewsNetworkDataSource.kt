@@ -1,5 +1,5 @@
 package com.giovannidiluca.network
 
 interface NewsNetworkDataSource {
-    fun getRemoteArticles(): NewsPagingSource
+    fun getRemoteArticles(sourceId: String): NewsPagingSource
 }

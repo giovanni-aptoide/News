@@ -7,6 +7,6 @@ import javax.inject.Inject
 class NewsRepositoryImpl @Inject constructor(private val newsNetworkDataSource: NewsNetworkDataSource) :
     NewsRepository {
 
-    override fun getArticles(): NewsPagingSource =
-        newsNetworkDataSource.getRemoteArticles()
+    override fun getArticles(sourceId: String): NewsPagingSource =
+        newsNetworkDataSource.getRemoteArticles(sourceId)
 }

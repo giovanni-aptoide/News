@@ -9,14 +9,15 @@ import java.io.IOException
 
 
 class NewsPagingSource(
-    private val backend: NewsApi
+    private val backend: NewsApi,
+    private val sourceId: String
 ) : PagingSource<Int, ArticleResponse>() {
 
     override suspend fun load(params: LoadParams<Int>): LoadResult<Int, ArticleResponse> {
         return try {
             val pageNumber = params.key ?: 1
 
-            val response = backend.getHeadlines(pageNumber)
+            val response = backend.getHeadlines(page = pageNumber, sources = sourceId)
             val articles = response.articles
 
             LoadResult.Page(

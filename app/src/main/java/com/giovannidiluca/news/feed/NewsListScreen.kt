@@ -116,7 +116,7 @@ private fun HeadlineList(
     val context = LocalContext.current
 
     LazyColumn {
-        item { TopBar(stringResource(id = R.string.app_name)) }
+        item { TopBar(stringResource(id = R.string.source)) }
         items(count = articles.itemCount,
             key = articles.itemKey(),
             contentType = articles.itemContentType { article -> article }) { index ->
@@ -186,7 +186,6 @@ fun HeadlineCardPreview() {
             publishedAt = "2024-03-22T19:36:00Z",
             author = "John Doe",
             active = true,
-            sourceName = "BBC"
         ), onClick = {})
     }
 }

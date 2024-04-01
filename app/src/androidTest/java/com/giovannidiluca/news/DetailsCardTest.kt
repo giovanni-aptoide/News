@@ -26,7 +26,6 @@ class DetailsCardTest {
             publishedAt = "Mar, 22 2024",
             author = "John Doe",
             active = true,
-            sourceName = "BBC"
         )
 
         composeTestRule.setContent {
@@ -49,7 +48,6 @@ class DetailsCardTest {
             publishedAt = "Mar, 22 2024",
             author = "",
             active = true,
-            sourceName = "BBC"
         )
 
         composeTestRule.setContent {

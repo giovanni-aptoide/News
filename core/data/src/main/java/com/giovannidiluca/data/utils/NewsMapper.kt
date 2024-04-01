@@ -16,6 +16,5 @@ fun ArticleResponse.toArticle() = Article(
     publishedAt = DateFormatterUtils.transformDate(publishedAt),
     author = author ?: "",
     active = title != removedTag,
-    sourceName = source.name
 )
 
